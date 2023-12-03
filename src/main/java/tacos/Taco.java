@@ -1,24 +1,26 @@
 package tacos;
 
-
+import org.springframework.data.annotation.Id;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
-
 
 import java.util.Date;
 import java.util.List;
 
 @Data
-@Table("Taco")
+@Table
 public class Taco {
+
+    @Id
     private long id;
 
     private Date createdAt = new Date();
 
     @NotNull
-    @Size(min=5, message = "Name must be at least 5 characters long")
+    @Size(min = 5, message = "Name must be at least 5 characters long")
     private String name;
 
     @NotNull

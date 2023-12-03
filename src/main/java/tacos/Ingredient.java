@@ -8,17 +8,17 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.domain.Persistable;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Data
 @Table
+@Data
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 public class Ingredient implements Persistable<String> {
     @Id
-    private final String id;
+    private String id;
 
-    private final String name;
+    private String name;
 
-    private final Type type;
+    private Type type;
 
     @Override
     public boolean isNew() {
